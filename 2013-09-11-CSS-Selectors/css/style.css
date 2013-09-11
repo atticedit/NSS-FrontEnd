@@ -1,0 +1,69 @@
+/*selecting by ID*/
+
+#div1 {
+  color: #ff0000;
+}
+
+/*selecting by class*/
+
+.divs {
+  background-color: yellow;
+}
+
+/*selecting by tag*/
+
+p {
+  color: green;
+}
+
+/*selecting by tag*/
+/*a {
+  background-color: red;
+}*/
+
+/*selecting by attribute*/
+a[href="http://google.com"] {
+  background-color: red;
+}
+
+/*selecting by attribute, searching for an ending exactly matching the value*/
+a[href$="cnn.com"] {
+  background-color: green;
+}
+
+/*selecting by attribute, searching for content:  somewhere exactly matching the value*/
+a[href*="yahoo"] {
+  background-color: blue;
+}
+
+/*selecting by parent-child relationships*/
+/*the children of the lis inherit the same values*/
+/*the > character denotes a direct child relationship, though in this case there are only direct children of the lis anyway*/
+/*ul > li {
+  font-size: 25px;
+}*/
+
+/*selecting by parent-child relationships*/
+/*only targets the spans, which constitute the third li*/
+/*ul > li:nth-child(3) {
+  font-size: 25px;
+}*/
+
+/*selecting by parent-child relationships*/
+/*only targets the 2nd item in the third li (the spans)*/
+ul > li:nth-child(3) > span:nth-child(2) {
+  font-size: 25px;
+}
+
+a:hover {
+  background-color: white;
+}
+
+#span2
+{
+  background-color: green;
+}
+
+span {
+  background-color: red;
+}

@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+
+/*header > div {
+  float: left;
+  width: 200px;
+  /*border: 1px dashed green;
+}*/
+
+#logoimg {
+  float: left;
+  width: 100px;
+  /*border: 1px dashed red;*/
+}
+
+#logotxt {
+  float: left;
+  /*width: 300px;*/
+  /*border: 1px dashed blue;*/
+  font-family: Trade Winds, sans-serif;
+  font-size: 48px;
+  color: maroon;
+  padding: 20px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+h2 {
+  font-size: 24px
+  font-family: serif;
+  font-weight: bold;
+  padding: 25px 0 10px 0;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 20px;
+}
+
+p {
+  padding: 10px 0 10px 20px;
+  line-height: 20px;
+}
+
+p:nth-child(2n) {
+  font-style: italic;
+  }
+
+a:hover {
+  background-color: red;
+}
