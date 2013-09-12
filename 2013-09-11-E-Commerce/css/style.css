@@ -29,3 +29,16 @@ p, li {
 img {
   padding-top: 25px;
 }
+
+.map-caption {
+  font: 13px/150% 'Ubuntu', sans-serif;
+  text-decoration: none;
+}
+
+#signoff {
+  padding-top: 10px;
+}
+
+#sig {
+  width: 200px;
+}
