@@ -25,3 +25,7 @@ p, li {
   font: 16px/150% 'Ubuntu', sans-serif;
   color: #49535C;
 }
+
+img {
+  padding-top: 25px;
+}
