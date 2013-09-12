@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500|Arvo:700);
+
+body {
+  background-color: #D9DADB;
+}
+
+nav, article {
+  margin: 20px;
+}
+
+h1 {
+  font: 500 36px/150% 'Arvo', serif;
+  text-shadow: 0 1px 3px #49535C;
+  color: #FFFFFF;
+}
+
+
+
+h3 {
+  font: 500 18px/150% 'Ubuntu', sans-serif;
+  padding-top: 15px;
+}
+
+p, li {
+  font: 16px/150% 'Ubuntu', sans-serif;
+  color: #49535C;
+}
