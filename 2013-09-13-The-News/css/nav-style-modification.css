@@ -1,0 +1,30 @@
+/*replace current versions of the below declarations with these*/
+
+nav {
+  width: 1170px;
+  background-color: #303436;
+  margin: 0 auto;
+}
+
+ul {
+  padding: 20px;
+}
+
+li {
+  font-size: 16px;
+  padding-left: 50px;
+  display: block;
+  line-height: 1px;
+}
+
+nav a {
+  color: #FFFFFF;
+  float: left;
+  padding-right: 84px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #bababa;
+  text-decoration: underline;
+}
