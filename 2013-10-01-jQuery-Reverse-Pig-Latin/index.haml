@@ -2,13 +2,14 @@
 %html{lang: 'en'}
   %head
     %meta{charset: 'utf-8'}
-    %title jQuery - Reverse Pig Latin
+    %title jQuery Reverse Pig Latin
     %link{rel: 'stylesheet', href: 'css/normalize.css'}
     %link{rel: 'stylesheet', href: 'css/style.css'}
   %body
+    %h1 Pig Latinize a sentence and reverse word order (plus add semicolons)
     %input#original{type: 'text'}
-    %input#result{type: 'text', readonly: 'true'}
     %input#convert{type: 'button', value: 'Pig this and reverse!'}
+    %input#result{type: 'text', readonly: 'true'}
 
     %script{src: 'js/jquery-1.10.2.min.js'}
     %script{src: 'js/underscore-min.js'}

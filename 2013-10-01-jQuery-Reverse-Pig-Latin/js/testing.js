@@ -1,16 +1,12 @@
-// test( '<name of function>', function() {
+// test('<name of function>', function() {
 //   deepEqual(<actual value>, <expected value>, 'what this test is doing');
 //   deepEqual(<actual value>, <expected value>, 'testing this function with different arguments');
 // });
 
-test( 'pig_latin', function() {
+test('pig_latin', function() {
   deepEqual(pig_latin('hello'), 'ellohay', 'pig latin should work');
 });
 
-test( 'word_order_reverse', function() {
-  deepEqual(word_order_reverse('this is fun'), 'fun is this', 'order of words should be reversed');
-});
-
-test( 'gip', function() {
-  deepEqual(gip('this is fun'), 'unfay siay histay', 'words are pigged and order of words is reversed');
+test('reverse_order_pig_latinize', function() {
+  deepEqual(reverse_order_pig_latinize('this, is, fun'), 'unfay; siay; histay', 'words are pigged; word order reversed; semicolons instead of commas');
 });

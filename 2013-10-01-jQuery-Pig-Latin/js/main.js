@@ -1,5 +1,5 @@
-$(document).ready(initialize);
-
+$(document).ready(initialize)
+;
 function initialize()
 {
   $('#pig').click(piggifier);
