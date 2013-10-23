@@ -1,0 +1,68 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Stock Market
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+  .row
+    %h1 Crazy Fancy Stock Market App
+  .row#setupFunds
+    .small-6.columns
+      %input#initialFunds{type: 'text', autofocus: true, placeholder: '$0.00'}
+    .small-3.columns
+      %input#setCashBalance.small.button.radius{type: 'button', value: 'Set Cash Balance'}
+    .small-3.columns
+  .row
+    %h3.subheader Buy A Stock
+  .row
+    .small-3.columns
+      %input#symbol{type: 'text', placeholder: 'Enter a stock symbol to buy'}
+    .small-3.columns
+      %input#quantity{type: 'text', placeholder: 'Enter the number of shares'}
+    .small-3.columns
+      %input#buy.small.button.success.radius{type: 'button', value: 'Buy'}
+    .small-3.columns
+
+  .row
+    %h3.subheader Your Account
+  .row
+    .small-4.columns
+      %h5
+        Cash: $
+        %span#cashBalance
+    .small-4.columns
+      %h5
+        Stock Value: $
+        %span#stocksValue
+    .small-4.columns
+      %h5
+        Total: $
+        %span#total
+  .row
+    .small-6.columns
+      %input#interval{type: 'text', placeholder: 'How long between updates?'}
+    .small-3.columns
+      %input#setInterval.small.button.radius{type: 'button', value: 'Set Interval'}
+    .small-3.columns
+  .row
+    .small-12.columns
+      %table
+        %tr#header
+          %th Name
+          %th Symbol
+          %th Quote
+          %th Shares
+          %th Stock Value
+
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}

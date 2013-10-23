@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width' name='viewport'>
+  <title>Shopping | Firebase | TDD</title>
+  <link href='/css/normalize.css' rel='stylesheet'>
+  <link href='/css/foundation.css' rel='stylesheet'>
+  <link href='/css/app.css' rel='stylesheet'>
+  <script src='/js/vendor/custom.modernizr.js'></script>
+  <script src='/js/app/keys.js'></script>
+</head>
+<body>
+  <div class='row'>
+    <div class='small-12 columns'>
+      <h1>Shopping</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-2 columns'>
+      <input id='product-name' placeholder='Product Name' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='product-image' placeholder='Image URL' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='product-price' placeholder='Price' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='product-off' placeholder='Percent Off' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input id='product-weight' placeholder='Product Weight' type='text'>
+    </div>
+    <div class='small-2 columns'>
+      <input class='small button radius' id='add-product' type='button' value='Add Product'>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-12 columns'>
+      <h4>Products</h4>
+    </div>
+    <div class='small-12 columns'>
+      <table id='products'>
+        <tr>
+          <td>Name</td>
+          <td>Image</td>
+          <td>ID</td>
+          <td>Price</td>
+          <td>Percent Off</td>
+          <td>weight</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src='/js/vendor/jquery-1.10.2.js'></script>
+  <script src='/js/vendor/foundation.min.js'></script>
+  <script src='/js/vendor/underscore.js'></script>
+  <script src='/js/vendor/moment.min.js'></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <!-- %script{src: 'https://maps.googleapis.com/maps/api/js?key=__________&sensor=true'} -->
+  <script src='/js/app/app.js'></script>
+</body>

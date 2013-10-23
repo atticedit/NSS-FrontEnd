@@ -1,0 +1,49 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Simple Address Book
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+  .row
+    .small-12.columns
+      %h1 Simple Address Book
+  .row
+    .small-2.columns
+      %h6 Name
+    .small-2.columns
+      %h6 Address
+    .small-2.columns
+      %h6 Website
+    .small-2.columns
+      %h6 Email
+    .small-2.columns
+      %h6 Photo URL
+    .small-2.columns
+  .row#inputs
+    .small-2.columns
+      %input#name{type: 'text', autofocus: true}
+    .small-2.columns
+      %input#address{type: 'text'}
+    .small-2.columns
+      %input#web{type: 'text'}
+    .small-2.columns
+      %input#email{type: 'text'}
+    .small-2.columns
+      %input#photo{type: 'text'}
+    .small-2.columns
+      %input#add.small.button.success.radius{type: 'button', value: 'Add Person'}
+  .row
+    .small-12.columns#cards
+      .clear
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}

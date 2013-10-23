@@ -1,15 +1,13 @@
-// version incorporating Chyld's code that was further along than mine in features
+// version from 9:10 AM Thursday 10/17
 
 'use strict';
 
 // Firebase Schema
 var Δdb;
 var Δpositions;
-var Δfavorites;
 
 // Local Schema (defined in keys.js)
 db.positions = [];
-db.favorites = [];
 db.path = [];
 
 var geoOptions = {enableHighAccuracy: true, maximumAge: 1000, timeout: 27000};

@@ -1,0 +1,59 @@
+body
+{
+  background-image: url(../img/1874_US_Currency_Fractional_10_Cent_Note.jpg);
+  background-color: #A3BA8C;
+  margin: 50px 0 0 50px;
+  font-family: Helvetica, sans-serif;
+}
+
+#logo
+{
+  float: left;
+}
+
+h3
+{
+  margin-top: 75px;
+  padding: 0;
+}
+
+#balance
+{
+  margin-bottom: 25px;
+}
+
+.clear
+{
+  clear: both;
+}
+
+.columns
+{
+  margin-top: -25px;
+}
+
+#deposit_history
+{
+  float: left;
+  width: 250px;
+}
+
+#withdrawal_history
+{
+  float: left;
+  width: 250px;
+}
+
+.deposited
+{
+  color: #009900;
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+.withdrawn
+{
+  color: #ff0000;
+  list-style-type: none;
+  margin-left: -40px;
+}

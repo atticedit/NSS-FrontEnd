@@ -1,0 +1,45 @@
+!!! 5
+%html{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title To-Do List
+    %link{rel: 'stylesheet', href: 'css/normalize.css'}
+    %link{rel: 'stylesheet', href: 'css/style.css'}
+  %body
+    %header
+      %h1 To-Do List
+    %section
+      %table
+        %tr
+          %th Due Date
+          %th#task Task
+          %th Color
+          .clear
+        %tr
+          %td
+            %input#newDate{type: 'text'}
+          %td
+            %input#newTask{type: 'text'}
+          %td
+            %form{method: 'post'}
+              %select
+                %option Green
+                %option Orange
+                %option Red
+          %td
+            %input#add{type: 'button', value: 'Add Task'}
+          .clear
+    %article
+      %h2 Task List
+      %table#tasklist
+        %th Due Date
+        %th#task Task
+        %th Color
+        %th Done?
+        %th Remove?
+        %th Move?
+        .clear
+
+    %script{src: 'js/jquery-1.10.2.min.js'}
+    %script{src: 'js/underscore-min.js'}
+    %script{src: 'js/main.js'}

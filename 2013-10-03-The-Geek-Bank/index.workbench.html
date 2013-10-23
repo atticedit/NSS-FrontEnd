@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>The Geek Bank</title>
+    <link href='css/normalize.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+  </head>
+  <body>
+    <h1>The Geek Bank</h1>
+    <img id='logo'>
+    <div class='clear'></div>
+    <input autofocus id='logo_src' placeholder='Enter a URL for your logo' type='text'>
+    <input id='set_logo' type='button' value='Set Logo'>
+    <div class='clear'></div>
+    <h4>Balance</h4>
+    <input id='balance' placeholder='$0.00' readonly='true' type='text'>
+    <span id='initialsetup'>
+      <input id='init_balance' placeholder='Enter your initial balance' type='text'>
+      <input id='set_balance' type='button' value='Set Balance'>
+    </span>
+    <div class='clear'></div>
+    <input id='amount' placeholder='$0.00' type='text'>
+    <input id='deposit_funds' type='button' value='Deposit'>
+    <input id='withdraw_funds' type='button' value='Withdraw'>
+    <script src='js/jquery-1.10.2.min.js'></script>
+    <script src='js/underscore-min.js'></script>
+    <script src='js/main.js'></script>
+  </body>
+</html>

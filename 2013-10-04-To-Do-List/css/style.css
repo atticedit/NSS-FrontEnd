@@ -1,0 +1,20 @@
+body {
+  padding: 40px; }
+
+h2 {
+  margin-top: 75px; }
+
+input, form {
+  margin: 0 5px; }
+
+#newDate {
+  width: 80px; }
+
+#newTask {
+  width: 300px; }
+
+#add {
+  margin-left: 20px; }
+
+.clear {
+  clear: both; }

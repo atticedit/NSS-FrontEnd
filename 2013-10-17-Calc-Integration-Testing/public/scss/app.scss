@@ -1,0 +1,36 @@
+body {
+  background-color: #2a0a0a;
+}
+
+h2, h4 {
+  padding-top: 30px;
+}
+
+h6 {
+  padding-top: 12px;
+}
+
+h2, h4, h6 {
+  color: #d3d3d3;
+}
+
+#calculations, #getters {
+  margin-bottom: 30px;
+}
+
+#getSum, #getProduct, #removeNegatives, #removePositives {
+  width: 100%;
+}
+
+li {
+  color: #6e6e6e;
+  list-style-type: none;
+}
+
+li:nth-child(odd) {
+  background-color: rgb(28, 28, 28);
+}
+
+li:nth-child(even) {
+  background-color: rgb(230, 230, 230);
+}
