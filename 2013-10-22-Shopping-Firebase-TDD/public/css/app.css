@@ -1,8 +1,5 @@
-.button {
+table {
   width: 100%; }
 
-tr:first-child > td {
-  font-weight: bold; }
-
-td {
-  width: 20%; }
+.hidden {
+  display: none; }

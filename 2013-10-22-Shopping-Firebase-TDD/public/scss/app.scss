@@ -1,11 +1,12 @@
-.button {
+// Chyld version, Friday, 2013-10-25, 4:00 PM
+// no changes made since previous version
+
+table
+{
   width: 100%;
 }
 
-tr:first-child > td {
-  font-weight: bold;
-}
-
-td {
-  width: 20%;
+.hidden
+{
+  display: none;
 }
