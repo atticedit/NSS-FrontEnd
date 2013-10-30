@@ -1,0 +1,14 @@
+extends ../template/layout
+include ../mixins/form-helper.jade
+
+block content
+  h1 Address Book
+  h2 New Person
+  a(href='/people') People Page
+  form(action='/people', method='post')
+    mixin field('name', 'Full Name', 'bob', true)
+    mixin field('age', 'Age', '30')
+    mixin field('gender', 'Gender', 'f')
+    mixin field('color', 'Color', '#ffcc33')
+
+    button(type='submit') Save Person
