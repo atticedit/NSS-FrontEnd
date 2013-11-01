@@ -1,0 +1,44 @@
+@base: #49495e;
+@base-lighter: lighten(@base, 50%);
+@import url(http://fonts.googleapis.com/css?family=Nosifer|Lilita+One|Trade+Winds|Concert+One|Monoton|Pirata+One|Titan+One|Averia+Gruesa+Libre|Piedra|Boogaloo);
+
+// font-family: 'Nosifer', cursive;
+// font-family: 'Lilita One', cursive;
+// font-family: 'Trade Winds', cursive;
+// font-family: 'Concert One', cursive;
+// font-family: 'Monoton', cursive;
+// font-family: 'Pirata One', cursive;
+// font-family: 'Titan One', cursive;
+// font-family: 'Averia Gruesa Libre', cursive;
+// font-family: 'Piedra', cursive;
+// font-family: 'Boogaloo', cursive;
+
+body{
+  background-color: @base;
+  font: 13px/150% Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font: 68px/150% 'Nosifer', cursive;
+  color: darken(@base, 20%);
+  text-shadow: 3px 3px 3px #22234d;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.button{
+  background-color: darken(@base, 5%);
+  border-color: darken(@base, 10%);
+}
+
+label{
+  color: saturate(@base-lighter, 100%);
+}
+
+fieldset{
+  background-color: @base;
+}
+
+li{
+  list-style-type: none;
+}
