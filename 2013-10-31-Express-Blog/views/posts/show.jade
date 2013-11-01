@@ -1,0 +1,26 @@
+extends ../template/layout
+
+block content
+  .row
+    .small-12.columns
+      h1 Show Page
+  .row
+    .small-2.columns
+      a.button.tiny.radius.expand(href='/') Home
+    .small-2.columns
+      a.button.tiny.radius.expand(href='/posts') Posts
+    .small-2.columns
+      a.button.tiny.radius.expand.success(href='/posts/new') New
+    .small-6.columns
+  .row
+    .small-11.small-offset-1.columns
+      h3= post.title
+  .row
+    .small-11.small-offset-1.columns
+      p.meta= post.date
+  .row
+    .small-1.columns
+      img(src=post.image)
+      p.meta= post.author
+    .small-11.columns
+      p= post.content
