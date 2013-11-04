@@ -7,7 +7,7 @@ var Song = mongoose.Schema({
   art:       String,
   filename:  String,
   lyrics:    String,
-  createdAt: {type: Date, default: Date.now},
-})
+  createdAt: {type: Date, default: Date.now}
+});
 
 mongoose.model('Song', Song);

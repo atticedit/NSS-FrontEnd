@@ -1,0 +1,30 @@
+extends ../template/layout
+
+block content
+  .row
+    .small-12.columns
+      .song
+        p#title= song.title
+        img#art(src=song.art)
+        audio(src='/audios/#{song.filename}', controls=true)
+  .row
+    .song
+      .small-3.columns
+          p#duration <span>Duration:</span> #{song.duration} seconds
+      .small-2.small-offset-5.columns
+          form(action='/songs/#{song.id}/edit', method='post')
+            input(type='hidden', name='_method', value='put')
+            button.small.radius.expand(type='submit') Edit
+      .small-2.columns
+          form(action='/songs/#{song.id}', method='post')
+            input(type='hidden', name='_method', value='delete')
+            button.small.radius.alert.expand(type='submit') Delete
+  .row
+    .small-12.columns
+      .song
+        ul <span>Lyrics:</span>
+          li #{song.lyrics}
+        ul <span>Genres:</span>
+          each genre in song.genres
+            li= genre
+        p= song.createdAt

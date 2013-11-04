@@ -1,44 +1,142 @@
 @base: #49495e;
-@base-lighter: lighten(@base, 50%);
-@import url(http://fonts.googleapis.com/css?family=Nosifer|Lilita+One|Trade+Winds|Concert+One|Monoton|Pirata+One|Titan+One|Averia+Gruesa+Libre|Piedra|Boogaloo);
-
-// font-family: 'Nosifer', cursive;
-// font-family: 'Lilita One', cursive;
-// font-family: 'Trade Winds', cursive;
-// font-family: 'Concert One', cursive;
-// font-family: 'Monoton', cursive;
-// font-family: 'Pirata One', cursive;
-// font-family: 'Titan One', cursive;
-// font-family: 'Averia Gruesa Libre', cursive;
-// font-family: 'Piedra', cursive;
-// font-family: 'Boogaloo', cursive;
+@base-lighter: lighten(@base, 45%);
+@base-darker: darken(@base, 18%);
+@highlight: #ffd700;
+@shadow: #22234d;
+@import url(http://fonts.googleapis.com/css?family=Nosifer|Lilita+One|Trade+Winds|Monoton|Pirata+One|Titan+One|Piedra|Boogaloo);
 
 body{
   background-color: @base;
   font: 13px/150% Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 h1{
-  font: 68px/150% 'Nosifer', cursive;
-  color: darken(@base, 20%);
-  text-shadow: 3px 3px 3px #22234d;
-  margin-top: 35px;
-  margin-bottom: 15px;
+  margin: 25px 0 0 0;
+
+  font: 103px/130% 'Trade Winds', cursive;
+  text-shadow: 4px 4px 5px @shadow;
+  color: @highlight;
+
+  // font: 86px/150% 'Monoton', cursive;
+  // text-shadow: 3px 3px 5px @shadow;
+  // color: @highlight;
+
+  // font: 68px/170% 'Nosifer', cursive;
+  // font: 100px/150% 'Titan One', cursive;
+  // font: 159px/130% 'Boogaloo', cursive;
+  // font: 151px/130% 'Pirata One', cursive;
+  // font: 133px/130% 'Piedra', cursive;
+  // font: 128px/150% 'Lilita One', cursive;
+  // color: @base-darker;
+  // text-shadow: 3px 3px 5px @shadow;
 }
 
-.button{
-  background-color: darken(@base, 5%);
-  border-color: darken(@base, 10%);
+#header span{
+  color: lighten(@highlight, 35%);
 }
 
-label{
-  color: saturate(@base-lighter, 100%);
+#navbox{
+  width: 100%;
+  height: 57px;
+
+  background: @base-darker;
+  background: -moz-linear-gradient(left, @base-darker 0%, lighten(@base-darker, 10%) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, @base-darker), color-stop(100%, lighten(@base-darker, 10%)));
+  background: -webkit-linear-gradient(left, @base-darker 0%, lighten(@base-darker, 10%) 100%);
+  background: -o-linear-gradient(left, @base-darker 0%, lighten(@base-darker, 10%) 100%);
+  background: -ms-linear-gradient(left, @base-darker 0%, lighten(@base-darker, 10%) 100%);
+  background: linear-gradient(to right, @base-darker 0%, lighten(@base-darker, 10%) 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base-darker', endColorstr='lighten(@base-darker, 5%)', GradientType=1 );
+
+  // background-color: @base-darker;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+button, .button{
+  background-color: @base-darker;
+  border-width: 0;
+  box-shadow: none;
+  margin-top: 11px;
+}
+
+button:hover, button:focus, .button:hover, .button:focus{
+  background-color: @highlight;
+  // box-shadow: 3px 3px 3px @shadow;
+}
+
+label, #songpicker{
+  color: @base-lighter;
+  font-size: 13px;
+}
+
+#songpicker{
+  margin: 0 15px 0 3px;
 }
 
 fieldset{
-  background-color: @base;
+  margin-top: 40px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  legend{
+    background-color: @base;
+  }
 }
 
 li{
   list-style-type: none;
+}
+
+audio{
+  display: block;
+  width: 100%;
+}
+
+#title, #name{
+  font-size: 24px;
+  margin: 40px 0 10px 0;
+}
+
+#art, #photo{
+  width: 400px;
+  margin: 15px 0;
+}
+
+#footerbox{
+  width: 100%;
+  background-color: lighten(@base-darker, 5%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 25px;
+
+  p{
+    padding: 20px;
+    color: @base-lighter;
+  }
+}
+
+#navbox .radius.small{
+  font-size: 14px;
+}
+
+#duration{
+  margin-top: 18px;
+}
+
+.song, .artist{
+  span{
+    color: black;
+    font-weight: bold;
+  }
+
+  button{
+    margin-top: 14px;
+  }
+
 }

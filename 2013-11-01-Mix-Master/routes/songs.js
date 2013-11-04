@@ -30,6 +30,26 @@ exports.create = function(req, res){
   new Song(req.body).save(function(err, song, count){
     console.log('--after--');
     console.log(song);
+    res.redirect('/songs/#{db.song.id}');
+  });
+};
+
+/*
+ * GET /songs/:id
+ */
+
+exports.show = function(req, res){
+  Song.findById(req.params.id, function(err, song){
+    res.render('songs/show', {title: 'Music for Ears | Show Song', song: song});
+  });
+};
+
+/*
+ * DELETE /songs/:id
+ */
+
+exports.delete = function(req, res){
+  Song.findByIdAndRemove(req.params.id, function(err){
     res.redirect('/songs');
   });
 };
