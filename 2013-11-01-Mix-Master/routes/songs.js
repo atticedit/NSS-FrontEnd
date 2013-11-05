@@ -7,7 +7,7 @@ var Song = mongoose.model('Song');
 
 exports.index = function(req, res){
   Song.find(function(err, songs){
-    res.render('songs/index', {title: 'Music for Ears | Songs', songs: songs});
+    res.render('songs/index', {title: 'Songs', songs: songs});
   })
 };
 
@@ -16,7 +16,7 @@ exports.index = function(req, res){
  */
 
 exports.new = function(req, res){
-  res.render('songs/new', {title: 'Music for Ears | New Song'});
+  res.render('songs/new', {title: 'New Song', song: new Song});
 };
 
 /*
@@ -30,7 +30,7 @@ exports.create = function(req, res){
   new Song(req.body).save(function(err, song, count){
     console.log('--after--');
     console.log(song);
-    res.redirect('/songs/#{db.song.id}');
+    res.redirect('/songs');                                                             /*redirect changed Tue 5:30*/
   });
 };
 
@@ -40,7 +40,27 @@ exports.create = function(req, res){
 
 exports.show = function(req, res){
   Song.findById(req.params.id, function(err, song){
-    res.render('songs/show', {title: 'Music for Ears | Show Song', song: song});
+    res.render('songs/show', {title: 'Show Song', song: song});
+  });
+};
+
+/*
+ * GET /songs/:id/edit
+ */
+
+exports.edit = function(req, res){
+  Song.findById(req.params.id, function(err, song){
+    res.render('songs/edit', {title: 'Edit Song', song: song});
+  });
+};
+
+/*
+ * PUT /songs/:id
+ */
+
+exports.update = function(req, res){
+  Song.findByIdAndUpdate(req.params.id, req.body, function(err, song){
+    res.redirect('/songs/' + req.params.id);                                            /*url changed Tue 5:30*/
   });
 };
 

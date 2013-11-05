@@ -8,7 +8,7 @@ var Artist = mongoose.model('Artist');
 
 exports.index = function(req, res){
   Artist.find(function(err, artists){
-    res.render('artists/index', {title: 'Music for Ears | Artists', artists: artists});
+    res.render('artists/index', {title: 'Artists', artists: artists});
   });
 };
 
@@ -18,7 +18,7 @@ exports.index = function(req, res){
 
 exports.new = function(req, res){
   Song.find(function(err, songs){
-    res.render('artists/new', {title: 'Music for Ears | New Artist', songs: songs});
+    res.render('artists/new', {title: 'New Artist', songs: songs, artist: new Artist});
   });
 };
 
@@ -38,11 +38,23 @@ exports.create = function(req, res){
 };
 
 /*
+ * GET /artists/:id
+ */
+
+exports.show = function(req, res){
+  Artist.findById(req.params.id, function(err, artist){
+    res.render('artists/show', {title: 'Show Artist', artist: artist});
+  });
+};
+
+/*
  * GET /artists/:id/edit
  */
 
 exports.edit = function(req, res){
-  res.render('artists/edit', {title: 'Music for Ears | Edit Artist'});
+  Artist.findById(req.params.id, function(err, artist){
+    res.render('artists/edit', {title: 'Edit Artist', artist: artist});
+  });
 };
 
 /*
@@ -50,16 +62,8 @@ exports.edit = function(req, res){
  */
 
 exports.update = function(req, res){
-  res.redirect('/artists' + req.params.id);
-};
-
-/*
- * GET /artists/:id
- */
-
-exports.show = function(req, res){
-  Artist.findById(req.params.id, function(err, artist){
-    res.render('artists/show', {title: 'Music for Ears | Show Artist', artist: artist});
+  Artist.findByIdAndUpdate(req.params.id, req.body, function(err, artist){              /*function added to url Tue AM*/
+    res.redirect('/artists/' + req.params.id);                                          /*slash added to back of url Tue AM*/
   });
 };
 

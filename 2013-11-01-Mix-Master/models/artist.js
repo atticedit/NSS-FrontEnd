@@ -5,7 +5,7 @@ var Artist = mongoose.Schema({
   photo:     String,
   website:   String,
   bio:       String,
-  songs:     [{type: mongoose.Schema.Types.ObjectId, ref: 'Song' }],
+  songs:     [{type: mongoose.Schema.Types.ObjectId, ref: 'Song'}],
   createdAt: {type: Date, default: Date.now}
 });
 

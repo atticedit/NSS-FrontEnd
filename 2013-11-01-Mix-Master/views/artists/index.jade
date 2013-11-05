@@ -6,8 +6,13 @@ block content
       #artists
         each artist in artists
           .artist
-            a(href='/artists/#{artist.id}'): p#name= artist.name
+            a(href='/artists/#{artist.id}'): p#name=artist.name
             a(href='/artists/#{artist.id}'): img#photo(src=artist.photo)
-            form(action='/artists/#{artist.id}', method='post')
-              input(type='hidden', name='_method', value='delete')
-              button.small.radius.alert(type='submit') Delete
+            .row
+              .small-2.columns
+                span: a.button.small.radius.expand(href='/artists/#{artist.id}/edit') Edit
+              .small-2.columns
+                form(action='/artists/#{artist.id}', method='post')
+                  input(type='hidden', name='_method', value='delete')
+                  button.small.radius.alert.expand(type='submit') Delete
+              .small-8.columns
