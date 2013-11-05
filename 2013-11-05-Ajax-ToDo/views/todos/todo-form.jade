@@ -1,0 +1,13 @@
+form#todos(action='/todos', method='post')
+  fieldset
+    legend New ToDo
+    .row
+      mixin field(4, 'title', 'Title')
+      mixin field(4, 'dueDate', 'Due Date (mm/dd/yyyy)')
+      .small-4.columns
+        select#priority-select(name='priority')
+          option(selected=true, value='default') Select Priority
+          each priority in priorities
+            option(value=priority.id)=priority.name
+    .row
+      .small-2.columns.small-offset-10: button.radius.success.small.expand(type='submit') Save

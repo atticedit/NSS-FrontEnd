@@ -1,5 +1,13 @@
+// Chyld version Tuesday 11/5/13 AM
+
 var mongoose = require('mongoose');
 var Song = mongoose.model('Song');
+var Genre = mongoose.model('Genre');
+var _ = require('lodash');
+
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
 
 /*
  * GET /songs
@@ -7,30 +15,7 @@ var Song = mongoose.model('Song');
 
 exports.index = function(req, res){
   Song.find(function(err, songs){
-    res.render('songs/index', {title: 'Songs', songs: songs});
-  })
-};
-
-/*
- * GET /songs/new
- */
-
-exports.new = function(req, res){
-  res.render('songs/new', {title: 'New Song', song: new Song});
-};
-
-/*
- * POST /songs
- */
-
-exports.create = function(req, res){
-  console.log('--before--');
-  console.log(req.body);
-  req.body.genres = req.body.genres.split(', ');
-  new Song(req.body).save(function(err, song, count){
-    console.log('--after--');
-    console.log(song);
-    res.redirect('/songs');                                                             /*redirect changed Tue 5:30*/
+    res.render('songs/index', {title: 'All Songs', songs: songs});
   });
 };
 
@@ -39,8 +24,18 @@ exports.create = function(req, res){
  */
 
 exports.show = function(req, res){
-  Song.findById(req.params.id, function(err, song){
+  Song.findById(req.params.id).populate('genres').exec(function(err, song){
     res.render('songs/show', {title: 'Show Song', song: song});
+  });
+};
+
+/*
+ * GET /songs/new
+ */
+
+exports.new = function(req, res){
+  Genre.find(function(err, genres){
+    res.render('songs/new', {title: 'New Song', song: new Song(), genres: genres, _: _});
   });
 };
 
@@ -49,8 +44,36 @@ exports.show = function(req, res){
  */
 
 exports.edit = function(req, res){
-  Song.findById(req.params.id, function(err, song){
-    res.render('songs/edit', {title: 'Edit Song', song: song});
+  Song.findById(req.params.id).populate('genres').exec(function(songErr, song){
+    Genre.find(function(genreErr, genres){
+      res.render('songs/edit', {title: 'Edit Song', song: song, genres: genres, _: _});
+    });
+  });
+};
+
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
+
+/*
+ * POST /songs
+ */
+
+exports.create = function(req, res){
+  new Song(req.body).save(function(songErr, song, count){
+    if(songErr){
+      Genre.find(function(genreErr, genres){
+        res.render('songs/new', {title: 'New Song', song: new Song(), genres: genres, err: songErr});
+      });
+    } else {
+      Genre.find().where('_id').in(song.genres).exec(function(err, genres){
+        for(var i = 0; i < genres.length; i++){
+          genres[i].songs.push(song.id);
+          genres[i].save();
+        }
+        res.redirect('/songs');
+      });
+    }
   });
 };
 
@@ -59,8 +82,24 @@ exports.edit = function(req, res){
  */
 
 exports.update = function(req, res){
-  Song.findByIdAndUpdate(req.params.id, req.body, function(err, song){
-    res.redirect('/songs/' + req.params.id);                                            /*url changed Tue 5:30*/
+  Song.findById(req.params.id, function(err, oldSong){
+    Genre.find().where('_id').in(oldSong.genres).exec(function(err, genres){
+      for(var i = 0; i < genres.length; i++){
+        genres[i].songs.pull(oldSong.id);
+        genres[i].save();
+      }
+    });
+
+    Song.findByIdAndUpdate(req.params.id, req.body, function(songErr, song){
+      Genre.find().where('_id').in(song.genres).exec(function(err, genres){
+        for(var i = 0; i < genres.length; i++){
+          genres[i].songs.push(song.id);
+          genres[i].save();
+        }
+      });
+
+      res.redirect('/songs');
+    });
   });
 };
 
@@ -69,7 +108,7 @@ exports.update = function(req, res){
  */
 
 exports.delete = function(req, res){
-  Song.findByIdAndRemove(req.params.id, function(err){
+  Song.findByIdAndRemove(req.params.id, req.body, function(err, song){
     res.redirect('/songs');
   });
 };

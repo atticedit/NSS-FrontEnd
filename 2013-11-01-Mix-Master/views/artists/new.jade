@@ -7,4 +7,22 @@ block content
       include ../template/errors
   .row
     .small-12.columns
-      include form
+      form(action='/artists', method='post')
+        fieldset
+          legend=title
+          .row
+            mixin field(4, 'name', 'Name', artist.name, null, true)
+            mixin field(4, 'website', 'Website', artist.website)
+            mixin field(4, 'photo', 'Photograph', artist.photo)
+          .row
+            .small-12.columns
+              label(for='bio') Bio:
+              textarea#bio(name='bio', value=artist.bio)
+          .row
+            .small-12.columns
+              each song in artist.songs
+                input(value=song.id, type='checkbox', name=songs)
+                span#songpicker=song.title
+        .row
+          .small-2.columns.small-offset-8: a.button.radius.alert.small.expand(href='/artists') Cancel
+          .small-2.columns: button.radius.success.small.expand(type='submit') Save Artist
