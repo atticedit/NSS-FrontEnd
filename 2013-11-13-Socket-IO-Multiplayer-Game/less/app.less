@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Bangers);
+@base: #547074;
+@board: #4a84a1;
+@background: lighten(@base, 40%);
+@dark: darken(@board, 5%);
+@darker: darken(@board, 10%);
+
+body{
+  background-color: @background;
+}
+
+h1{
+  font-family: 'Bangers', cursive;
+  font-size: 69px;
+  letter-spacing: 0.06em;
+  color: orange;
+  text-align: center;
+  text-shadow: 1px 1px 1px darken(orange, 15%);
+  margin-bottom: 10px;
+}
+
+.box{
+  background-color: @darker;
+  margin-top: 15px;
+  height: 800px;
+}
+
+#game{
+  margin-top: 25px;
+  border: 4px solid @darker;
+  // -webkit-border-radius: 5px;
+  // -moz-border-radius: 5px;
+  // border-radius: 5px;
+}
+
+.hidden{
+  display: none;
+}
+
+.cell{
+  width: 70px;
+  height: 70px;
+  background-color: @board;
+  border: 2px solid @dark;
+}
