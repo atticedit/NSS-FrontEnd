@@ -1,0 +1,11 @@
+form#newtodo.hidden(action='/', method='post')
+  fieldset
+    legend New Todo
+    .row
+      mixin field(4, 'text', 'title', 'Title', null, null, true)
+      mixin field(4, 'text', 'category', 'Category')
+      mixin field(4, 'text', 'dueDate', 'Due Date')
+    .row
+      .small-2.small-offset-10.columns: button#save.radius.success.small.expand Create
+
+//- mixin field variables: colSize, type, name, text, value, placeholder, autofocus

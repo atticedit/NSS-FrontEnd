@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Priority = mongoose.model('Priority');
 
 /*
- * POST /priorities
+ * POST /priorites
  */
 
 exports.create = function(req, res){

@@ -1,13 +1,13 @@
-form#todos(action='/todos', method='post')
+form#todo(action='/todos', method='post')
   fieldset
-    legend New ToDo
+    legend New Todo
     .row
       mixin field(4, 'title', 'Title')
-      mixin field(4, 'dueDate', 'Due Date (mm/dd/yyyy)')
+      mixin field(4, 'dueDate', 'Due Date', null, 'mm/dd/yyyy')
       .small-4.columns
         select#priority-select(name='priority')
           option(selected=true, value='default') Select Priority
           each priority in priorities
-            option(value=priority.id)=priority.name
+            option(value=priority.id)= priority.name
     .row
-      .small-2.columns.small-offset-10: button.radius.success.small.expand(type='submit') Save
+      .small-2.small-offset-10.columns: button.radius.success.small.expand(type='submit') Save
