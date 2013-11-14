@@ -3,10 +3,13 @@ extends ../template/layout
 block content
   - var numbers = [0,1,2,3,4,5,6,7,8,9];
 
-  .row
+  h1 Multiplayer Socket.io Game
+  p#current-player
+  //- .row
     .small-10.small-centered.columns
       h1 Multiplayer Socket.io Game
-  .row.small-centered
+      h4.subheader#current-player
+  .row
     .small-2.small-offset-2.columns
       input#name(type='text', name='name', placeholder='easy')
     .small-2.columns
@@ -14,9 +17,19 @@ block content
     .small-2.columns
       input#color(type='text', name='color', placeholder='crimson')
     .small-2.columns
-      button#start.small.expand Start
+      button#start.small.expand.radius Start
     .small-2.columns
   .box
+    table#game.hidden
+      tbody
+        each y in numbers
+          tr
+            each x in numbers
+              td.cell(data-x=x, data-y=y)
+                .health
+                .player
+//- my version previous to Chyld's changes in other files
+  //- .box
     .row
       .small-9.small-centered.columns
         table#game.hidden
@@ -25,9 +38,5 @@ block content
               tr
                 each x in numbers
                   td.cell(data-x=x, data-y=y)
-        //- table#game
-          tbody
-            each y in numbers
-              tr
-                each x in numbers
-                  td.cell(data-x=x, data-y=y)
+                    .health
+                    .player
