@@ -112,6 +112,7 @@ function htmlResetBoard(){
 
 function htmlAddPlayer(player){
   var $cell = $('.cell[data-x="' + player.x + '"][data-y="' + player.y + '"]');
+  $cell.find('.player')
   $cell.find('.health').css('background-color', '#293e5a');
   $cell.find('.health').css('width', player.health + '%');
   $cell.find('.player').css('background-color', player.color);

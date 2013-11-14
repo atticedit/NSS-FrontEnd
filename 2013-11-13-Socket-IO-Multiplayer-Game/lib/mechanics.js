@@ -59,6 +59,19 @@ exports.attachPlayer = function(game, player, fn){
   });
 };
 
+exports.emitAddPotions = function(game, fn){
+  var numOfPotions = __.sample(__.range(1, game.players.length+1));
+  var potions = [];
+  for(var i = 0; i<numOfPotions; i++){
+    var potion = {};
+    potion.x = __.sample(__.range(10));
+    potion.y = __.sample(__.range(10));
+    potion.strength = __.sample(__.range(20,30));
+    potions.push(potion);
+  }
+  fn(err, game, potions);
+};
+
 exports.emitPlayers = function(sockets, players, fn){
   for(var i = 0; i < players.length; i++){
     if(sockets[players[i].socketId]){
